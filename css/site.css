@@ -1,0 +1,75 @@
+:root{
+   /* colors */
+   --cs-primary-color: rgb(145, 203, 186);
+   --cs-secondary-color: rgb(66, 148, 186);
+   --cs-highlight-color: rgb(250, 225, 120);
+   --cs-dark-color: #212121;
+   --cs-light-color: #deeefb;
+   --cs-background-color: rgba(250, 250, 250, .8);
+
+}
+
+
+
+
+
+
+/* Sticky Foot*/
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+/* End Stiky Footer */
+
+#mainNav{
+    background: var(--cs-primary-color);
+}
+
+footer {
+    background: var(--cs-primary-color);
+    color: var(--cs-light-color);
+}
+
+footer .bi{
+    color: var(--cs-light-color);
+    font-size: 1.5rem;
+    padding-left: 0.5rem;
+    transition: color .25 ease;
+}
+
+footer .bi:hover {
+    color: var(--cs-highlight-color);
+}
+
+.checklist{
+    list-style-type: none;
+}
+
+.checklist>li i {
+    color: orange;
+    padding-right: .5rem;
+}
+
+.devIcons {
+    font-size: 3rem;
+    padding-left: 0.5rem;
+}
+
+.appLogo {
+    max-width: 400px;
+}
