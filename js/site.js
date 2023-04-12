@@ -7,10 +7,25 @@ function getValues(){
     let startNumber = parseInt(startValue);
     let endNumber = parseInt(endValue);
 
-    let numberArray = generateNumbers(startNumber, endNumber)
-    displayNumbers(numberArray)
 
+    if (Number.isInteger(startNumber) && Number.isInteger(endNumber))
+    {
+
+        let numberArray = generateNumbers(startNumber, endNumber)
+        displayNumbers(numberArray);
+    } else {
+        //display error message
+        Swal.fire({
+                icon:'error',
+                title: 'Oops,',
+                text: 'Please enter a valid number for the start and end value'
+
+        });
+    }
 }
+    
+
+
 
 //genterate range of numbers to display
 //Business/ function
