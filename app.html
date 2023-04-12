@@ -61,9 +61,59 @@
     </header>
 
     <main class="container mt-3">
-        <h1>App UI GOES HERE</h1>
-        <Input class="text" placeholder="Enter a Message" id="message"> </Input>
-        <button class="btn btn-primary" id="btnSubmit">Display Message</button>
+        <div class="row row-cols-1 row-cols-md-2">
+            <!-- instructions -->
+            <div class="col">
+                <h1>Hundo: A Coding Challenge</h1>
+                <h4 class="lead">Live life one loop at a time! Hundo is a JavaScript excercise using loops.</h4>
+                <hr />
+                <h2>Instructions</h2>
+                <p>
+                    Enter a starting value and an ending value. Press the button,
+                    and the values will appear on the page with the even numbers in bold.
+                </p>
+            </div>
+            <!-- app -->
+            <div class="col">
+                <form action="#">
+                    <h5>Enter Values</h5>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="startValue">Starting Number</label>
+                            <input class="form-control" type="number" name="startValue" id="startValue"
+                                placeholder="Starting Number" aria-label="Starting Number" value="0" />
+                        </div>
+                        <div class="col-md-6">
+                            <label for="endValue">Ending Number</label>
+                            <input class="form-control" type="number" name="endValue" id="endValue"
+                                placeholder="Ending Number" aria-label="Ending Number" value="100" />
+                        </div>
+                        <!-- Input for start/end value -->
+                        <div class="col-12 text-end">
+                            <button id="btnSubmit" class="btn btn-primary" type="button">
+                                Display Hundo
+                            </button>
+                        </div>
+                    </div>
+                    <hr />
+                    <!-- Results area -->
+                    <h2 class="mt-3">Results</h2>
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            
+                               <tbody id="results">
+                                    <!-- results  -->
+                               </tbody>
+                        </table>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+
+
+
+
     </main>
 
     <footer>
@@ -97,9 +147,9 @@
     <!-- APP js -->
     <script src="/js/site.js"> </script>
     <script>
-        document.getElementById('btnSubmit').addEventListener('click', displayMessage);
+        document.getElementById('btnSubmit').addEventListener('click', getValues);
     </script>
 </body>
-
+    
 
 </html>

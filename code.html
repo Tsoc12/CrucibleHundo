@@ -70,25 +70,59 @@
             <div class="col-lg-8 col-12">
                 <pre class="line-numbers">
                     <code class="language-js">
-                    function displayMessage() {
-                        let msg = document.getElementById('message').value;
-                        // alert(msg);
-                        
-                        Swal.fire(
-                        {
-                            backdrop:false,
-                            title: 'App Name',
-                            text: msg
-                            }
-                        );
-                    }
+//get start and end numbers
+// entry point aka controller function
+function getValues(){
+let startValue = document.getElementById('startValue').value;
+let endValue = document.getElementById('endValue').value;
+
+let startNumber = parseInt(startValue);
+let endNumber = parseInt(endValue);
+
+let numberArray = generateNumbers(startNumber, endNumber)
+displayNumbers(numberArray)
+
+}
+
+//genterate range of numbers to display
+//Business/ function
+function generateNumbers(start, end) {
+
+let basketOfNumbers = [];
+
+    for(let number = start; number&lt;= end; number=number + 1) { basketOfNumbers.push(number); } return basketOfNumbers; 
+    //=>[0, 1, 2, 3. ..., 100]
+    }
+
+    //placing the generated on the page and bolding
+    // viewpoint
+function displayNumbers(numbers){ // [0, 1, 2, 3. ..., 100]
+
+    let results = '';
+
+    for (let index = 0; index &lt; numbers.length; index=index + 1){ let currentNumber=numbers[index]; if(currentNumber %
+        2==0) { results +=`&lt;tr>
+        &lt;td class="evenNumber"> ${currentNumber}&lt;/td>
+        &lt;/tr>`;
+        } else {
+        results += `<tr>
+            &lt;td>${currentNumber}&lt;/td>
+        &lt;/tr>`;
+        }
+        }
+        let tableBody = document.getElementById('results');
+        tableBody.innerHTML = results;
+
+        }
+
                     </code>
                 </pre>
             </div>
             <div class="col-lg-4 col-12">
-                <p> The code is stuctured in one fuction</p>
-                <h5>displayMessgae</h5>
-                <p>Print Out Message</p>
+                <p> In the first function getValue I used the getElementById to get numbers from the user. 
+                    I also used the parseInt function becuase whatever number the user submits would be a string so i needed to convert it to a integer.</p>
+                <h5>In the generateNumbers function that gets the number and returns them in the basketOfNumber function. </h5>
+                <p>The function displayNumber is used to to print all the number that are in the range of numbers the user put in. It makes all even number print bold and the color red.</p>
             </div>
         </div>
 
